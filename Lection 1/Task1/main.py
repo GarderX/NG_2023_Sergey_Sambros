@@ -1,1 +1,1 @@
-print("Sergey \nSambros")
+print ("Sergey \nSambros")
