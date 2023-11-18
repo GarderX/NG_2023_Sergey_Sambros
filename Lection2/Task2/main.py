@@ -7,12 +7,8 @@ while elem > 0:
   if elem == el:
     break
 
-print(list)
-for x in list:
-  if "a" in x:
-    list.append(x)
-print(list)
+count = sum(str(numbers).isdigit() for numbers in list)
 
 print(list)
-count = len(list)
-print("Количество элементов в списке:", count)
+
+print("Count of number in list:", count)
