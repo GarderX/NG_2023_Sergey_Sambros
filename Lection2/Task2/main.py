@@ -1,10 +1,10 @@
 list = []
 elem = int(input("How many elements do you want add to list? - "))
-el = 0
+element = 0
 while elem > 0:   
   list.append(input("Enter element: "))
-  el += 1
-  if elem == el:
+  element += 1
+  if elem == element:
     break
 
 count = sum(str(numbers).isdigit() for numbers in list)

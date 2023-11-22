@@ -2,9 +2,9 @@
 num = int(input("Enter the number:  "))
 
 list = []
-for i in range(1, num + 1):
-    chisla = [j for j in range(1, i + 1) if i % j == 0]
-    list.append([i, chisla])
+for number in range(1, num + 1):
+    chisla = [notete for notete in range(1, number + 1) if number % notete == 0]
+    list.append([number, chisla])
 
 print("---" * 41)
 
