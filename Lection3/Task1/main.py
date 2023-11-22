@@ -1,15 +1,24 @@
-file = open("testfile.txt", "a") # w - write, r - read, x - create, a - add to the end
-file.write("Enter any text")
+import os
+
+file = open("testfile.txt", "a")
+file.write (input("Enter any text: "))
 file.close()
 
-def symbols(file):
- with open("testfile.txt", 'r') as file:
+def count_of_symbols(filename):
+    print("Symbols and count: ")
+
+    with open(filename, 'r') as file:
+            symbols = {}
             content = file.read()
-            character_count = {}
             for char in content:
-                character_count[char] = character_count.get(char, 0) + 1
+                if char in symbols:
+                    symbols[char] += 1
+                else:
+                    symbols[char] = 1
 
-            return symbols
- 
-result = symbols(file)
+            print(symbols)
 
+filename = ("testfile.txt")
+count_of_symbols(filename)
+
+os.remove("testfile.txt")
