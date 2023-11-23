@@ -5,18 +5,16 @@ file.write (input("Enter any text: "))
 file.close()
 
 def count_of_symbols(filename):
-    print("Symbols and count: ")
+    print("Unique symbols and count: ")
 
     with open(filename, 'r') as file:
-            symbols = {}
-            content = file.read()
-            for char in content:
-                if char in symbols:
-                    symbols[char] += 1
-                else:
-                    symbols[char] = 1
+        content = file.read()
+        unique_symbols = set(content)
+        for char in unique_symbols:
+            count = content.count(char)
+            print(f"{char}: {count}", end=" ")
 
-            print(symbols)
+
 
 filename = ("testfile.txt")
 count_of_symbols(filename)
