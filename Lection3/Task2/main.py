@@ -1,4 +1,3 @@
-import utils
 import json
 
 system = {
@@ -33,4 +32,3 @@ system = {
 
 print ("System details: ")
 print (json.dumps(system, indent=5))
-utils.drawLine()
