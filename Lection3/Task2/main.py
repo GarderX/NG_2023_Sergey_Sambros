@@ -2,7 +2,7 @@ import json
 
 system = {
     "Name": 
-    "--DESKTOP-B9JSHAT",
+"--DESKTOP-B9JSHAT",
     "CPU": "CPU_Name" "Intel(R) Core(TM) i3-8100",
     "Architecture": "X86-64",
     "Socket": "LGA 1151",

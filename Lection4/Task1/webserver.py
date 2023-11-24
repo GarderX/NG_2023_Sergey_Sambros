@@ -1,19 +1,30 @@
 from flask import Flask, render_template, request
+import os
 
-servak = Flask("Lesson_5")
+directory = 'C:\\NG_2023_Sergey_Sambros\\Lection4\\Task1'
+os.chdir(directory)
 
-@servak.route("/")
+webserver = Flask("Lesson_4, Task1")
+
+@webserver.route("/")
 def index():
     return render_template("index.html", data="TEST")
 
-@servak.route("/ask")
+@webserver.route("/ask")
 def ask():
     return render_template("ask.html")
 
-@servak.route("/sum")
-def sum():
+@webserver.route("/calculate")
+def calculate():
     firstValue = float(request.args.get("valuea"))
     secondValue = float(request.args.get("valueb"))
-    return str(firstValue + secondValue)
-
-servak.run(host="0.0.0.0", port=8080)
+    operation = request.args.get("operation")
+    if operation == "Add":
+        return str(firstValue + secondValue)
+    elif operation == "Divide":
+        return str(firstValue / secondValue)
+    elif operation == "Multiply":
+        return str(firstValue * secondValue)
+    elif operation == "Difference":
+        return str(firstValue - secondValue)
+webserver.run(host="0.0.0.0", port=8080)

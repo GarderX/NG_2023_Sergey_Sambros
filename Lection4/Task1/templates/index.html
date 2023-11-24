@@ -1,8 +1,18 @@
+<!DOCTYPE html>
 <html>
-    <head>
-
-    </head>
-    <body>
-        <h1>{{ data }}</h1>
-    </body>
+<head>
+ <title>Calculator</title>
+</head>
+<body>
+ <form action="/calculator" method="get">
+    <label for="number1">Enter first number:</label>
+    <input action="number" id="number1" name="valuea"><br><br>
+    <label for="number2">Enter second number:</label>
+    <input action="number" id="number2" name="valueb"><br><br>
+    <input action="submit" name="operation" value="Add">
+    <input action="submit" name="operation" value="Divide">
+    <input action="submit" name="operation" value="Multiply">
+    <input action="submit" name="operation" value="Difference">
+ </form>
+</body>
 </html>
