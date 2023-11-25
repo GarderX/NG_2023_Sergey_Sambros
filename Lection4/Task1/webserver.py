@@ -8,17 +8,13 @@ webserver = Flask("Lesson_4, Task1")
 
 @webserver.route("/")
 def index():
-    return render_template("index.html", data="TEST")
+    return render_template("index.html")
 
-@webserver.route("/ask")
-def ask():
-    return render_template("ask.html")
-
-@webserver.route("/calculate")
+@webserver.route("/calculate", methods=['POST'])
 def calculate():
-    firstValue = float(request.args.get("valuea"))
-    secondValue = float(request.args.get("valueb"))
-    operation = request.args.get("operation")
+    firstValue = float(request.form.get("valuea"))
+    secondValue = float(request.form.get("valueb"))
+    operation = request.form.get("operation")
     if operation == "Add":
         return str(firstValue + secondValue)
     elif operation == "Divide":
@@ -27,4 +23,5 @@ def calculate():
         return str(firstValue * secondValue)
     elif operation == "Difference":
         return str(firstValue - secondValue)
+
 webserver.run(host="0.0.0.0", port=8080)
