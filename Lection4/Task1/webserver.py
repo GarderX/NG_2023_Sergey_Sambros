@@ -1,8 +1,4 @@
 from flask import Flask, render_template, request
-import os
-
-directory = 'C:\\NG_2023_Sergey_Sambros\\Lection4\\Task1'
-os.chdir(directory)
 
 webserver = Flask("Lesson_4, Task1")
 
