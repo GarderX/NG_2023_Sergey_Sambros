@@ -1,8 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import os
-
-directory = 'C:\\NG_2023_Sergey_Sambros\\Lection4\\Task3'
-os.chdir(directory)
 
 app = Flask("Lection4_Task3")
 
