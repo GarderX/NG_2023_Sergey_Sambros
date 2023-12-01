@@ -8,34 +8,10 @@ def keyfind(json, key):
             result = keyfind(element_dictionary, key)
             if result is not None:
                 return result
- 
-json_code = '''
-{
-    "glossary": {
-        "title": "example glossary",
-        "GlossDiv": {
-            "title": "S",
-            "GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-                    "SortAs": "SGML",
-                    "GlossTerm": "Standard Generalized Markup Language",
-                    "Acronym": "SGML",
-                    "Abbrev": "ISO 8879:1986",
-                    "GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-                        "GlossSeeAlso": [
-                            "GML",
-                            "XML"
-                        ]
-                    },
-                    "GlossSee": "markup"
-                }
-            }
-        }
-    }
-}
-'''
+            
+json_file = input("Enter file to open: ")
+with open(json_file, "r") as file:
+    json_code = file.read()
 
 parsed_code = json.loads(json_code)
 
